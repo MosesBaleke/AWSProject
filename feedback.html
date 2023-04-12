@@ -11,28 +11,28 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript">
-    // $(function () {
+    $(function () {
 
-    //   $("#feedback_form").submit(function (e) {
-    //     e.preventDefault();
+      $("#feedback_form").submit(function (e) {
+        e.preventDefault();
 
-    //     $form = $(this);
+        $form = $(this);
 
-    //     $.ajax({
-    //       type: "POST",
-    //       url: "https://5lapu5qeh8.execute-api.us-east-1.amazonaws.com/Testing/feedback",
-    //       data: $form.serialize(),
-    //       success: function (data) {
-    //         // alert(data);
+        $.ajax({
+          type: "POST",
+          url: "https://fhz1or54va.execute-api.us-east-1.amazonaws.com/Testing/feedback",
+          data: $form.serialize(),
+          success: function (data) {
+            // alert(data);
 
-    //         var container = $("#feedback").find("div.container-fluid");
-    //         container.empty();
-    //         container.append("<h2>" + data + "</h2>");
-    //       },
-    //       dataType: 'json'
-    //     });
-    //   });
-    // });
+            var container = $("#feedback").find("div.container-fluid");
+            container.empty();
+            container.append("<h2>" + data + "</h2>");
+          },
+          dataType: 'json'
+        });
+      });
+    });
   </script>
 </head>
 
@@ -73,8 +73,7 @@
         <div class="row">
           <div class="col-md-6 col-md-offset-3 form-container">
             <p>Please provide your feedback below:</p>
-            <form role="form" method="post" id="feedback_form"
-              action="https://fhz1or54va.execute-api.us-east-1.amazonaws.com/Testing/feedback">
+            <form role="form" method="post" id="feedback_form">
               <div class="row">
                 <div class="col-sm-12 form-group">
                   <label>How do you rate your overall experience?</label>
